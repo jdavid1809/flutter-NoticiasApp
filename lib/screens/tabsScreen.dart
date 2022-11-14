@@ -5,9 +5,17 @@ class TabsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('TabsScreen'),
+    return Scaffold(
+      body: PageView(
+        physics: BouncingScrollPhysics(),
+        children: <Widget>[
+          Container(
+            color: Colors.red,
+          ),
+          Container(
+            color: Colors.green,
+          ),
+        ],
       ),
     );
   }

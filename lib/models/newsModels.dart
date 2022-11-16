@@ -11,12 +11,12 @@ String newsResponseToJson(NewsResponse data) => json.encode(data.toJson());
 
 class NewsResponse {
   NewsResponse({
-    this.status,
+    required this.status,
     required this.totalResults,
     required this.articles,
   });
 
-  String? status;
+  String status;
   int totalResults;
   List<Article> articles;
 
@@ -38,9 +38,9 @@ class Article {
   Article({
     required this.source,
     this.author,
-    this.title,
+    required this.title,
     this.description,
-    this.url,
+    required this.url,
     this.urlToImage,
     required this.publishedAt,
     this.content,
@@ -48,9 +48,9 @@ class Article {
 
   Source source;
   String? author;
-  String? title;
+  String title;
   String? description;
-  String? url;
+  String url;
   String? urlToImage;
   DateTime publishedAt;
   String? content;
@@ -80,12 +80,12 @@ class Article {
 
 class Source {
   Source({
-    required this.id,
-    this.name,
+    this.id,
+    required this.name,
   });
 
-  String id;
-  String? name;
+  String? id;
+  String name;
 
   factory Source.fromJson(Map<String, dynamic> json) => Source(
         id: json["id"] == null ? null : json["id"],

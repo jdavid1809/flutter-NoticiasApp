@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:noticias_app/services/services.dart';
+import 'package:noticias_app/screens/screens.dart';
 import 'package:provider/provider.dart';
 
 class TabsScreen extends StatelessWidget {
@@ -21,7 +21,7 @@ class _Navegation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final navegacionModel = Provider.of<_NavegationModel>(context);
-    final newsServices = Provider.of<NewsService>(context);
+    // final newsServices = Provider.of<NewsService>(context);
 
     return BottomNavigationBar(
       currentIndex: navegacionModel.paginaActual,
@@ -51,12 +51,8 @@ class _Pages extends StatelessWidget {
       // physics: BouncingScrollPhysics(),
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
-        Container(
-          color: Colors.red,
-        ),
-        Container(
-          color: Colors.green,
-        ),
+        Tab1Screen(),
+        Tab2Screen(),
       ],
     );
   }
